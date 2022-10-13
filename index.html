@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilo.css">
+  <title>Tarea Maquetacion Formulario Validacion</title>
+</head>
+<body>
+  <hr class="naranja">
+</hr>
+<div class="contenedorazul">
+<img class="logo" src="imagenes/logo_cabecera.png" alt="">
+</div>
+<div class="contenedorgris">
+<h1 class="titulo1">DÉJANOS CONOCERTE</h1>
+<div class="linearoja">
+  <hr class="rojo"><br>
+</div>
+</div><br>
+<div class="contenedorfor ancho">
+<p class="naranjita">¡ Compártenos tu información !</p>
+<p class="negro">Dejanos tus datos personales y nosotros nos comunicaremos contigo lo más pronto posible.</p>
+<form action="enviar.php" name="formulario" method="post" enctype="multipart/form-data">
+
+<input type="text" id="nombrecompleto" name="nombre" class="izq" placeholder="Nombre Completo*">
+<input type="text" class="der" placeholder="Estado">
+<input type="email" class="izq" id="correoelectronico" name="email" placeholder="Correo Electronico*">
+<input type="text" class="der" placeholder=" Colonia">
+<input type="tel" class="izq" id="celular" name="tel" placeholder="Celular*">
+<select name="elige" id="" class="der2">
+  <option value="">Elige tu área de interes</option>
+  <option value="1">Cajas</option>
+  <option value="2">Servicios</option>
+  <option value="3">Asesoramiento Financiero</option>
+  <option value="4">Gestoría y Cobranza</option>
+  <option value="5">Crédito</option>
+  <option value="6">Jurídico</option>
+  <option value="7">Archivo</option>
+  <option value="8">Mercadotecnia</option>
+  <option value="9">Diligencias</option>
+  <option value="10">Compras</option>
+  <option value="11">Intendencia</option>
+  <option value="12">Auditoría</option>
+  <option value="13">Capital Humano</option>
+  <option value="14">Mantenimiento</option>
+  <option value="15">Sistemas</option>
+  <option value="16">Contabilidad</option>
+  <option value="17">Administración</option>
+</select>
+<input type="text" class="izq" placeholder="Ciudad">
+
+<div class="contenedorpdf">
+  <p class="sube">Sube tu Curriculum en formato PDF <span class="sube2">( no exceder de 5MB )</span>
+    <img class="img" src="imagenes/icono_pdf.png" alt="">
+  </p>
+</div>
+
+<input type="text" class="izq" placeholder=" Localidad">
+<input class="der3" type="file">
+
+<div class="contenedorbtn">
+  <input id="botton" type="button" value="Enviar"
+  onclick="valida_formulario()" class="der4">
+</div>
+</form>
+<br><br><br><br><br><br><br>
+</div><br>
+<div class="contenedorazul"><br>
+<p class="blanco">Nombre del alumno: Julissa Alejandra Aldana Chay</p><br>
+<p class="blanco">Grupo: 7SB</p><br>
+<p class="blanco">Materia: Programacion web</p>
+<script>
+  function valida_formulario() {
+    if (document.getElementById('nombrecompleto').value.length == 0) {
+      alert('NO SE PUEDE ENVIAR Escribe tu nombre completo')
+      document.getElementById('nombrecompleto').focus()
+      return 0;
+    }
+    if (document.getElementById('correoelectronico').value.length == 0) {
+      alert('NO SE PUEDE ENVIAR Escribe tu correo electrónico')
+      document.getElementById('correoelectronico').focus()
+      return 0;
+    }
+    if (document.getElementById('celular').value.length == 0) {
+      alert('NO SE PUEDE ENVIAR Escribe tu número de celular')
+      document.getElementById('celular').focus()
+      return 0;
+    }
+    document.formulario.submit()
+  }
+</script>
+</body>
+</html>
